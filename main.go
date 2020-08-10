@@ -7,7 +7,10 @@ import (
 )
 
 func main() {
+	const topic = "example"
+	const partition = 0
+
 	// create kafka connection
-	conn := connection.CreateKafkaConnection()
-	fmt.Printf("%v\n", conn)
+	conn := connection.CreateKafkaConnection(topic, partition)
+	fmt.Printf("Kafka connection local address: %v\n", conn.LocalAddr().String())
 }
