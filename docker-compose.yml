@@ -45,12 +45,10 @@ services:
       - zk1
       - zk2
       - zk3
-    env_file:
-      - .env
     environment:
       KAFKA_BROKER_ID: 1
       KAFKA_ZOOKEEPER_CONNECT: ${KAFKA_IP_ADDR}:22181,${KAFKA_IP_ADDR}:32181,${KAFKA_IP_ADDR}:42181
-      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://${KAFKA_IP_ADDR}:${KAFKA_PORT}
+      KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://${KAFKA_IP_ADDR}:19092
 
   kafka-2:
     image: confluentinc/cp-kafka

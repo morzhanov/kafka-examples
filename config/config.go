@@ -18,3 +18,12 @@ func GetEnvVar(key string) string {
 
 	return os.Getenv(key)
 }
+
+var (
+	// KafkaIPAddress contains Kafka IP address
+	KafkaIPAddress = GetEnvVar("KAFKA_IP_ADDR")
+	// KafkaPort contains Kafka IP address
+	KafkaPort = GetEnvVar("KAFKA_PORT")
+	// KafkaConnectionURI contains Kafka connection uri
+	KafkaConnectionURI = KafkaIPAddress + ":" + KafkaPort
+)
